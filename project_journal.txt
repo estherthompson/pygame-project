@@ -1,0 +1,41 @@
+Project: YPYTIN 
+Description: A Python-based Mario-style adventure game with pixel art graphics and platformer gameplay.
+
+---
+
+Date: April 23, 2024
+Entry #: 001
+
+Content:
+- Created start and exit buttons for the main menu.
+- Added background images for the main menu and in-game scenes.
+
+Future Plans:
+- Implement basic player movement mechanics, including walking and jumping.
+- Plan dialogue script for the opening sequence to introduce the game's storyline and objectives.
+
+Date: April 24, 2024
+Entry #: 002
+
+Content:
+
+- Defined a Button class to create buttons with customizable attributes such as image, position, width, height, text, font, base color, and hovering color.
+- Implemented a Slider class for creating sliders with adjustable values within a specified range.
+- Created a music slider in the options function to control the mixer music volume.
+- Incorporated the music slider into the options menu, allowing users to adjust the volume while in the options menu.
+
+Future Plans:
+
+-Implement additional game mechanics, such as player movement and interaction with the environment.
+-Design and integrate pixel art graphics for characters, objects, and backgrounds.
+-Develop level designs and obstacles for the platformer gameplay.
+-Refine user interface elements for improved visual appeal and usability.
+-Continue testing and debugging to ensure smooth gameplay experience.
+-Plan for the implementation of additional features, such as enemy AI, power-ups, and scoring systems.
+
+Date April 25, 2024 
+
+
+Content:
+
+Future Plans: 
