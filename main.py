@@ -20,6 +20,9 @@ mixer.music.play(-1)
 
 opening_sequence = StartScreen(WIDTH, HEIGHT, WIN)
 
+clock = pygame.time.Clock()
+FPS = 60
+
 def get_font(size): # Returns Press-Start-2P in the desired size
     return pygame.font.Font("assets/Pixeled.ttf", size)
 
@@ -101,6 +104,8 @@ def main_menu():
 
                 
     while True:
+        clock.tick(FPS)  # Limit the frame rate
+
         events = pygame.event.get()
 
         WIN.blit(BG, (0, 0))
