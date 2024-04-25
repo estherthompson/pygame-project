@@ -24,7 +24,6 @@ class OptionsConf:
         WIN.blit(title_text, title_rect)
 
         # Render selected item
-        
 class Slider:
     def __init__(self, pos: tuple, size: tuple, initial_val: float, min_val: int, max_val: int) -> None:
         self.pos = pos

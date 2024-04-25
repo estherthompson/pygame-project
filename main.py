@@ -2,6 +2,9 @@ import pygame, sys
 from button import Button
 from pygame import mixer
 import options_conf
+import pygame_menu
+from opening_sequence import StartScreen
+
 
 pygame.init()
 
@@ -15,31 +18,13 @@ button_background = pygame.transform.scale(pygame.image.load("assets/btn_backgro
 mixer.music.load("assets/background_music.mp3")    
 mixer.music.play(-1)
 
+opening_sequence = StartScreen(WIDTH, HEIGHT, WIN)
+
 def get_font(size): # Returns Press-Start-2P in the desired size
     return pygame.font.Font("assets/Pixeled.ttf", size)
 
 
-def start():
-    mixer.music.stop()
-    while True:
-        start_mouse_pos = pygame.mouse.get_pos()
-        WIN.fill((0, 0, 0))
 
-        PLAY_BACK = Button(image=None, pos=(640, 460), width=500, height=500,
-                            text_input="BACK", font=get_font(25), base_color="White", hovering_color="Green")
-        PLAY_BACK.changeColor(start_mouse_pos)
-        PLAY_BACK.update(WIN)
-
-        for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if PLAY_BACK.checkForInput(start_mouse_pos):
-                        mixer.music.play(-1)
-                        main_menu()
-
-        pygame.display.update()
 def options():
 
     user_name = "Player"  # Default username
@@ -143,16 +128,17 @@ def main_menu():
                     pygame.quit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if start_button.checkForInput(menu_mouse_pos):
-                        start()
+                        opening_sequence.start()
                     if options_button.checkForInput(menu_mouse_pos):
                         options()
                     if exit_button.checkForInput(menu_mouse_pos):
-                        print("Quit button clicked")
+                        print
                         pygame.quit()
                         sys.exit()
 
         pygame.display.update()
 
 
-main_menu()
-
+if __name__ == "__main__":
+    main_menu()
+    opening_sequence.start()
